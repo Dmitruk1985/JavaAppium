@@ -1,5 +1,7 @@
 package tests;
 
+import io.qameta.allure.*;
+import io.qameta.allure.junit4.DisplayName;
 import lib.CoreTestCase;
 import lib.Platform;
 import lib.ui.SearchPageObject;
@@ -12,6 +14,11 @@ import java.util.List;
 
 public class SearchTests extends CoreTestCase {
     @Test
+    @Features(value ={@Feature(value="Search")})
+    @DisplayName("Search test")
+    @Description("We make the search and make sure expected result is displayed")
+    @Step("Starting test testSearch")
+    @Severity(value = SeverityLevel.CRITICAL)
     public void testSearch() {
 
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
@@ -22,6 +29,11 @@ public class SearchTests extends CoreTestCase {
     }
 
     @Test
+    @Features(value ={@Feature(value="Search")})
+    @DisplayName("Cancel search")
+    @Description("We cancel the search and make sure cancel button has disappeared")
+    @Step("Starting test testCancelSearch")
+    @Severity(value = SeverityLevel.NORMAL)
     public void testCancelSearch() {
 
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
@@ -33,6 +45,11 @@ public class SearchTests extends CoreTestCase {
     }
 
     @Test
+    @Features(value ={@Feature(value="Search")})
+    @DisplayName("Amount of not empty search")
+    @Description("We make sure more than one result is found in case of correct search")
+    @Step("Starting test testAmountOfNotEmptySearch")
+    @Severity(value = SeverityLevel.CRITICAL)
     public void testAmountOfNotEmptySearch() {
 
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
@@ -45,6 +62,11 @@ public class SearchTests extends CoreTestCase {
     }
 
     @Test
+    @Features(value ={@Feature(value="Search")})
+    @DisplayName("Amount of empty search")
+    @Description("We make sure no results are found in case of incorrect search")
+    @Step("Starting test testAmountOfEmptySearch")
+    @Severity(value = SeverityLevel.CRITICAL)
     public void testAmountOfEmptySearch() {
 
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
@@ -57,6 +79,11 @@ public class SearchTests extends CoreTestCase {
     }
 
     @Test
+    @Features(value ={@Feature(value="Search")})
+    @DisplayName("Make and cancel search")
+    @Description("We make sure more than one result is found and then cancel search")
+    @Step("Starting test testCancelSearchTest")
+    @Severity(value = SeverityLevel.CRITICAL)
     public void testCancelSearchTest() {
 
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
@@ -71,6 +98,11 @@ public class SearchTests extends CoreTestCase {
     }
 
     @Test
+    @Features(value ={@Feature(value="Search")})
+    @DisplayName("All search results have key word")
+    @Description("We make sure all search results contain key word")
+    @Step("Starting test testAllSearchResultsHaveKeyWordTest")
+    @Severity(value = SeverityLevel.NORMAL)
     public void testAllSearchResultsHaveKeyWordTest() {
 
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
@@ -84,6 +116,11 @@ public class SearchTests extends CoreTestCase {
     }
 
     @Test
+    @Features(value ={@Feature(value="Search")})
+    @DisplayName("Search results have title and description")
+    @Description("We make sure first three search results have title and description")
+    @Step("Starting test testSearchResultsHaveTitleAndDescription")
+    @Severity(value = SeverityLevel.CRITICAL)
     public void testSearchResultsHaveTitleAndDescription() {
 
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);

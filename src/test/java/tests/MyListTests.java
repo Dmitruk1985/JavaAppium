@@ -1,5 +1,7 @@
 package tests;
 
+import io.qameta.allure.*;
+import io.qameta.allure.junit4.DisplayName;
 import lib.CoreTestCase;
 import lib.Platform;
 import lib.ui.*;
@@ -16,6 +18,11 @@ public class MyListTests extends CoreTestCase {
     private static final String password = "Dmitruk1985";
 
     @Test
+    @Features(value ={@Feature(value="Search"), @Feature(value="Article")})
+    @DisplayName("Save first article to my list")
+    @Description("We save article to my list and then delete it with swipe")
+    @Step("Starting test testSaveFirstArticleToMyList")
+    @Severity(value = SeverityLevel.NORMAL)
     public void testSaveFirstArticleToMyList() {
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
         ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
@@ -48,6 +55,11 @@ public class MyListTests extends CoreTestCase {
     }
 
     @Test
+    @Features(value ={@Feature(value="Search"), @Feature(value="Article")})
+    @DisplayName("Save two articles to my list")
+    @Description("We save two articles to my list, delete one of them and make sure another has not been changed")
+    @Step("Starting test testSaveTwoArticlesToMyList")
+    @Severity(value = SeverityLevel.NORMAL)
     public void testSaveTwoArticlesToMyList() {
 
         ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);

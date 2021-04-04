@@ -39,7 +39,7 @@ public class CoreTestCase {
     @After
     @Step("Remove driver and session")
     public void tearDown() {
-       // driver.quit();
+        driver.quit();
     }
 
     @Step("Rotate screen to portrait mode")
